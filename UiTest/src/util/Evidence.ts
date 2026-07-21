@@ -15,19 +15,5 @@ export class Evidence {
       contentType: "application/json",
     });
   }
-
-  async evidenceImage(
-    name: string,
-    maskLocators: Locator[] = []
-  ) {
-    const screenshot = await this.page.screenshot({
-      fullPage: true,
-      mask: maskLocators,
-    });
-
-    await this.testInfo.attach(`${name}.png`, {
-      body: screenshot,
-      contentType: "image/png",
-    });
-  }
+  
 }
