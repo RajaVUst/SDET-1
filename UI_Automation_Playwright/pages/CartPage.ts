@@ -18,6 +18,7 @@ export class CartPage{
     cartTax = () : Locator => this.page.getByTestId("cart-tax");
     cartTotal = () : Locator => this.page.getByTestId("cart-total");
 
+    checkoutButton = () : Locator => this.page.getByTestId("checkout-button");
     cartEmptyMessage = () : Locator => this.page.getByRole("heading", {level: 2});
 
 
@@ -43,6 +44,10 @@ export class CartPage{
 
     async getEmptyCartMessage(){
         return await this.cartEmptyMessage();
+    }
+
+    async clickCheckoutButton(){
+        await this.checkoutButton().click();
     }
 
 
