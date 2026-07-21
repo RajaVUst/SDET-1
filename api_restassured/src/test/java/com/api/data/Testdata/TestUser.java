@@ -2,7 +2,7 @@ package com.api.data.Testdata;
 
 public class TestUser {
 
-    private static String name = "sethu";
+    private static String name = "Manu";
 
     public  static String getName(){
         return name;
