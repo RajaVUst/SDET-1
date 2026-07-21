@@ -47,7 +47,7 @@ export class PaymentPage{
 
 
         await cardnumber.click();
-        await cardnumber.fill(getCardNumber());
+        await cardnumber.fill(carddetails[user].number);
 
 
         let cardexpiry = await this.locatorclass.cardExpiry(this.page)

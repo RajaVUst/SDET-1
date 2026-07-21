@@ -6,6 +6,7 @@ export  function  getCardNumber(): string {
     const envKey = 'ARAVIND_CARD_NUMBER';
 
         try {
+            console.log(process.cwd())
             const envFilePath = path.resolve(process.cwd(),'.env'); 
 
             console.log("Looking for .env file at:", envFilePath);
