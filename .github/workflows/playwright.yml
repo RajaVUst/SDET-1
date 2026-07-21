@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - Cipiraj_Final_Assessment
 
   pull_request:
     branches:
       - main
+      - Cipiraj_Final_Assessment
 
 jobs:
   ui-tests:
