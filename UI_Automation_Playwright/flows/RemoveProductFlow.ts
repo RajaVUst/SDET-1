@@ -1,7 +1,7 @@
 import { Page, expect } from "@playwright/test";
 import { ProductListingPage } from "../pages/ProductListingPage";
 import { Header } from "../pages/component/Header";
-import { CartPage } from "../pages/CartPAge";
+import { CartPage } from "../pages/CartPage";
 import { ENV } from "../config/EnvCheck";
 
 
