@@ -1,4 +1,4 @@
-import { PaymentFlow } from "../flow/paymentFlow";
+import { PaymentFlow } from "../flow/PaymentFlow";
 import { SearchFlow } from "../flow/SearchFlow";
 import { Evidence } from "../src/util/Evidence";
 import { test as base } from "./LoggerFixture";
