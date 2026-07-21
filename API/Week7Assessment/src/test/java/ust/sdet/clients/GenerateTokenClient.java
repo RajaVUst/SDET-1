@@ -5,6 +5,7 @@ import ust.sdet.Builders.User;
 import ust.sdet.Builders.UserSeeder;
 import ust.sdet.Config.Secrets;
 import ust.sdet.Response.TokenResponse;
+import ust.sdet.SpecBuilder.AssertionSpec;
 import ust.sdet.SpecBuilder.HeadersSpec;
 import ust.sdet.endpoints.Endpoints;
 
@@ -19,6 +20,8 @@ public class GenerateTokenClient {
 
     Secrets secrets = new Secrets();
 
+    AssertionSpec assertionSpec = new AssertionSpec();
+
     public TokenResponse GenerateToken(User user){
         return given()
                 .spec(headspec.setHeaders())
@@ -26,6 +29,7 @@ public class GenerateTokenClient {
                 .when()
                 .post(endpoints.generateToken())
                 .then()
+                .spec(assertionSpec.successRetrievalStatus())
                 .extract()
                 .as(TokenResponse.class);
     }

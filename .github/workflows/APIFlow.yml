@@ -2,9 +2,9 @@ name: API CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "capstone/310962-aravind-jl" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "capstone/310962-aravind-jl" ]
 
 jobs:
   build:

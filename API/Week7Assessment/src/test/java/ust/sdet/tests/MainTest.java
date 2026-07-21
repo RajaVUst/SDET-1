@@ -7,6 +7,7 @@ import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import ust.sdet.Builders.User;
 import ust.sdet.Builders.UserSeeder;
+import ust.sdet.Response.BookResponse;
 import ust.sdet.Response.TokenResponse;
 import ust.sdet.Util.CreateAUser;
 import ust.sdet.clients.CreateUserClient;
@@ -79,7 +80,7 @@ public class MainTest {
 
         RetrieveBooksClient retrieveBooksClient = new RetrieveBooksClient();
 
-        response = retrieveBooksClient.RetrieveBooks(tokenResponse.token());
+        BookResponse bookResponse= retrieveBooksClient.RetrieveBooks(tokenResponse.token());
 
         System.out.println(response.asPrettyString());
     }
