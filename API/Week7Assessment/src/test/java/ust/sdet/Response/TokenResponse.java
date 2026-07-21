@@ -1,4 +1,4 @@
-package ust.sdet.Records;
+package ust.sdet.Response;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
