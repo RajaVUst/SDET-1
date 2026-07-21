@@ -32,6 +32,7 @@ jobs:
         working-directory: ui-tests
         env:
           BASE_URL: ${{ secrets.JAMESY_BASE_URL }}
+          HEADLESS: ${{ secrets.JAMESY_HEADLESS }}
         run: npx playwright test
 
       - name: Upload UI HTML Report
@@ -47,3 +48,42 @@ jobs:
         with:
           name: ui-allure-results
           path: ui-tests/allure-results
+
+  api-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 22
+          cache: maven
+
+      - name: Run API Tests
+        working-directory: api-tests
+        env:
+          BASE_URL: ${{ secrets.JAMESY_API_BASE_URL }}
+          USERNAME: ${{ secrets.JAMESY_API_USERNAME }}
+          PASSWORD: ${{ secrets.JAMESY_API_PASSWORD }}
+          INVALID_USERNAME: ${{ secrets.JAMESY_API_INVALID_USERNAME }}
+          INVALID_PASSWORD: ${{ secrets.JAMESY_API_INVALID_PASSWORD }}
+        run: mvn clean test
+
+      - name: Upload Surefire Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: api-tests/target/surefire-reports
+
+      - name: Upload API Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-allure-results
+          path: api-tests/allure-results
