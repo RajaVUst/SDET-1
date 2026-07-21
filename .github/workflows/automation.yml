@@ -32,6 +32,7 @@ jobs:
         working-directory: ui-tests
         env:
           BASE_URL: ${{ secrets.JAMESY_BASE_URL }}
+          HEADLESS: ${{ secrets.JAMESY_HEADLESS }}
         run: npx playwright test
 
       - name: Upload UI HTML Report
