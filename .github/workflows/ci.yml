@@ -40,7 +40,7 @@ jobs:
           SHIPPING_CITY: ${{ secrets.GEORGE_SHIPPING_CITY }}
           SHIPPING_ZIP: ${{ secrets.GEORGE_SHIPPING_ZIP }}
           SHIPPING_STATE: ${{ secrets.GEORGE_SHIPPING_STATE }}
-          CARD_NUMBER: ${{ secrets.CARD_NUMBER }}
+          CARD_NUMBER: ${{ secrets.GEORGE_CARD_NUMBER }}
           EXPIRY: ${{ secrets.GEORGE_EXPIRY }}
           CVV: ${{ secrets.GEORGE_CVV }}
 
