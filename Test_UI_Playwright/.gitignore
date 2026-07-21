@@ -1,4 +1,4 @@
-
+.env
 # Playwright
 node_modules/
 /test-results/
@@ -6,5 +6,4 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-
-.env
+secrets.local.env
