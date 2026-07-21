@@ -12,7 +12,6 @@ public class UserClient {
         return given()
                 .spec(RequestSpec.useCreationRequest())
                 .body(user)
-                .log().all()
                 .post("");
     }
 }
