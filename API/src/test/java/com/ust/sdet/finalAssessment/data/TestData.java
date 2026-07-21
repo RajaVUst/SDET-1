@@ -8,7 +8,7 @@ public class TestData {
 
     public static final String api_base_url = required("BASE_API_URL");
 
-    public static final String username = required("JUSTIN_USER_NAME");
+    public static final String username = required("JUSTIN_USER_NAME")+ String.valueOf(Math.random());
 
     public static final String userPassword = required("JUSTIN_USER_PASSWORD");
 
