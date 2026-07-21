@@ -2,9 +2,9 @@ name: Final Capstone Assesment By Practice Team
 
 on:
   push:
-    branches: [main,capstone/310910-muhammed-ali]
+    branches: [main,capstone/310919-muhammed-ali]
   pull_request:
-    branches: [mainy,capstone/310910-muhammed-ali]
+    branches: [mainy,capstone/310919-muhammed-ali]
 
 jobs:
 
