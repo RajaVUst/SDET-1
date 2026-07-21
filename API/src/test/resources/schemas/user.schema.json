@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "username",
+    "userID",
+    "books"
+  ],
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 1
+    },
+    "userID": {
+      "type": "string",
+      "minLength": 1
+    },
+    "books": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}

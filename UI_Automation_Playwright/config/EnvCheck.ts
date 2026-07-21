@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import path from "path";
 dotenv.config({
-    // path: path.resolve(__dirname, "../../../.env")?? path.resolve(__filename, ".env")
+    // path: path.resolve(__dirname, "../../.env")?? path.resolve(__filename, "../../.env")
 });
  
 function required(key: string): string {
@@ -14,11 +14,11 @@ function required(key: string): string {
 }
  
 export const ENV = {
-    baseUrl: required("UI_BASE_URL"),
-    browser: required("UI_BROWSER") ?? "chromium",
-    headless: required("HEADLESS") === "true",
-    timeout: Number(required("TIMEOUT")),
-    tax: Number(required("TAX"))
+    baseUrl: required("BASE_URL"),
+    browser: "chromium",
+    headless: "true",
+    timeout: 30_000,
+    tax: Number(required("JUSTIN_TAX"))
  
 } as const;
  

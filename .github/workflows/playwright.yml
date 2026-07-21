@@ -1,80 +1,89 @@
-name: Playwright Tests
+name: UI Automation
+ 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main]
   pull_request:
-    branches: [ main, master ]
+    branches: [main]
+ 
 jobs:
-  test:
-    timeout-minutes: 60
+  ui-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+ 
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      - name: Checkout Code
+        uses: actions/checkout@v4
+ 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+ 
+      - name: Install Dependencies
+        working-directory: UI_Automation_Playwright
+        run: npm ci
+ 
+      - name: Install Playwright Browser
+        working-directory: UI_Automation_Playwright
+        run: npx playwright install chromium --with-deps
+ 
+      - name: Run UI Tests
+        working-directory: UI_Automation_Playwright
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
+          USERNAME: ${{ secrets.JUSTIN_TAX }}
+          PASSWORD: ${{ secrets.JUSTIN_USER_PASSWORD }}
+        run: npx playwright test
+ 
+      - name: Upload UI HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: UI_Automation_Playwright/reports/html
+ 
+      - name: Upload UI Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-allure-results
+          path: UI_Automation_Playwright/allure-results
+ 
+  api-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+ 
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 
+ 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 22
+          cache: maven
+ 
+      - name: Run API Tests
+        working-directory: API
+        env:
+          BASE_URL: ${{ vars.BASE_API_URL }}
+          USERNAME: ${{ secrets.JUSTIN_USER_NAME }}
+          PASSWORD: ${{ secrets.JUSTIN_USER_PASSWORD }}
+        run: mvn clean test
+ 
+      - name: Upload Surefire Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: API/target/surefire-reports
+ 
+      - name: Upload API Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-allure-results
+          path: API/allure-results
+ 
