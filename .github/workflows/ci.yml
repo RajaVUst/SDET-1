@@ -3,7 +3,7 @@ name: UI and API Automation Final
 on:
   push:
     branches:
-      - George_Final_Assessment
+      - capstone/310918-george-bibu
   workflow_dispatch:
 
 jobs:
