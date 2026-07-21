@@ -65,8 +65,13 @@ export class SearchFlow {
     this.log.info(`Cart count before adding product ${initialCartCount} after adding ${afterAddingCartCount}`);
    }
 
-   
-
+   async noProductShown(){
+    var temp = await this.homePage.searchCount();
+    expect(temp).toEqual("0 products");
+    var noProductLocator = await this.homePage.NoProduct();
+    await expect(noProductLocator).toBeVisible();
+    await expect(noProductLocator).toContainText("No products found");
+   }
 
    
 

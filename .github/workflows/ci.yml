@@ -67,3 +67,62 @@ jobs:
           name: playwright-test-results
           path: UiTest/test-results/
           retention-days: 14
+          
+  api-tests:
+    name: API Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    defaults:
+      run:
+        working-directory: apitesting
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "22"
+          cache: maven
+
+    
+      - name: Create API .env
+        run: |
+          cat > .env << 'EOF'
+          MUHAMMED_API_URL=${{ secrets.MUHAMMED_API_URL }}
+          EOF
+
+      - name: Create API Secrets
+        run: |
+          cat > secrets.local.properties << 'EOF'
+          MUHAMMED_PASSWORD=${{ secrets.MUHAMMED_PASSWORD }}
+          EOF
+
+      - name: Run API Tests
+        run: mvn clean test
+
+      - name: Upload Surefire Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-results
+          path: apitesting/target/surefire-reports/
+          retention-days: 14
+    
+      - name: Generate Allure Report
+        if: always()
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: apitesting/target/allure-results
+          allure_report: allure-report
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-allure-results
+          path: apitesting/target/allure-results/
+          retention-days: 14

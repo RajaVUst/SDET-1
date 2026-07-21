@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 
 export class HomePage {
@@ -55,5 +55,9 @@ export class HomePage {
       async cartCount(){
         var cartCount = await this.page.getByTestId('cart-count').textContent();
         return Number.isNaN(Number(cartCount)) ? 0 : Number(cartCount);
+      }
+
+      async NoProduct(){
+       return this.page.getByTestId("no-products-found");
       }
 }

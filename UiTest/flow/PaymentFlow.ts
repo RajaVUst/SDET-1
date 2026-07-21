@@ -105,7 +105,6 @@ export class PaymentFlow {
     this.log.info("User Placed Order");
 
     this.log.info("User Redirected to Conformation page");
-    await expect(this.page.url).toContain("/")
     await this.conformationPage.verifyConformationPageReached();
     var temp = await this.conformationPage.totalPrice();
     expect(temp).toEqual(this.CartTotal);
