@@ -23,8 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: TEST_UI_Playwright/package-lock.json
+          
 
       - name: Create .env
         working-directory: TEST_UI_Playwright

@@ -1,7 +1,7 @@
-[INFO - 13:15:16] Test Started {undefined
-[INFO - 13:15:16] Going to HomePage {undefined
-[INFO - 13:15:18] Select the Product and add to Cart {undefined
-[INFO - 13:15:19] Make a checkout {undefined
-[INFO - 13:15:19] enter user details {[object Object]
-[INFO - 13:15:19] entering card details {[object Object]
-[INFO - 13:15:21] Test passed {undefined
+[INFO - 17:42:09] Test Started {undefined
+[INFO - 17:42:09] Going to HomePage {undefined
+[INFO - 17:42:12] Select the Product and add to Cart {undefined
+[INFO - 17:42:13] Make a checkout {undefined
+[INFO - 17:42:13] enter user details {[object Object]
+[INFO - 17:42:13] entering card details {[object Object]
+[INFO - 17:42:15] Test passed {undefined

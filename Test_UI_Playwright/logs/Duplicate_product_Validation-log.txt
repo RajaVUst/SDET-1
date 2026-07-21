@@ -1,5 +1,5 @@
-[INFO - 13:15:16] Test Started {undefined
-[INFO - 13:15:16] Going to HomePage {undefined
-[INFO - 13:15:19] Select the Product and increment 5 times and add to Cart {undefined
-[INFO - 13:15:19] Product Incremented {undefined
-[INFO - 13:15:19] Test passed {undefined
+[INFO - 17:42:09] Test Started {undefined
+[INFO - 17:42:09] Going to HomePage {undefined
+[INFO - 17:42:13] Select the Product and increment 5 times and add to Cart {undefined
+[INFO - 17:42:13] Product Incremented {undefined
+[INFO - 17:42:13] Test passed {undefined

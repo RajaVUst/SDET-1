@@ -16,7 +16,7 @@ public class CreateUser extends BaseTest{
     public void validateUserBookingCreation(){
         Logger.step("Creating User POJO with Username and Password");
         User user = new UserBuilder().setName(TestUser.getName()).build();
-        userClient.createUser(user).then().spec(ResponseSpec.userCreatedResponse());
+        userClient.createUser(user).then().log().all().spec(ResponseSpec.userCreatedResponse());
         Logger.step("Created User");
         Logger.pass("Test Passed");
     }
