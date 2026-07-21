@@ -26,12 +26,12 @@ jobs:
           
 
       - name: Create .env
-        working-directory: TEST_UI_Playwright
+        working-directory: Test_UI_Playwright
         run: |
           echo "BASE_URL=${{ vars.BASE_URL }}" > .env
 
       - name: Create secrets.local.env
-        working-directory: TEST_UI_Playwright
+        working-directory: Test_UI_Playwright
         run: |
           echo "CARD_NUMBER=${{ secrets.CIPI_CARD_NUMBER }}" > secrets.local.env
           echo "EXPIRY=${{ secrets.CIPI_EXPIRY }}" > secrets.local.env
@@ -39,15 +39,15 @@ jobs:
 
 
       - name: Install Dependencies
-        working-directory: TEST_UI_Playwright
+        working-directory: Test_UI_Playwright
         run: npm ci
 
       - name: Install Browsers
-        working-directory: TEST_UI_Playwright
+        working-directory: Test_UI_Playwright
         run: npx playwright install --with-deps
 
       - name: Run Playwright Test
-        working-directory: TEST_UI_Playwright
+        working-directory: Test_UI_Playwright
         run: npx playwright test 
 
       - name: Upload Playwright Report
@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: TEST_UI_Playwright/playwright-report
+          path: Test_UI_Playwright/playwright-report
 
       - name: Upload Test Results
         if: always()
