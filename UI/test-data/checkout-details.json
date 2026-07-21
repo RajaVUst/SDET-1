@@ -1,0 +1,11 @@
+{
+    "User":{
+        "name":"Carol",
+        "email":"carol@test.test",
+        "phno":"1234567890",
+        "address":"123 Main Street",
+        "city":"Springfield",
+        "state":"KS",
+        "zipcode":"62701"
+    }
+}

@@ -1,0 +1,76 @@
+
+# Playwright
+ui/node_modules/
+ui/test-results/
+ui/playwright-report/
+ui/blob-report/
+ui/playwright/.cache/
+ui/playwright/.auth/
+
+# Gradle
+api/.gradle/
+api/build/
+api/gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+ 
+# Kotlin
+api/.kotlin/
+ 
+# Maven
+api/target/
+ 
+### IntelliJ IDEA ###
+**/.idea/
+*.jar
+**/*.jar
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+ 
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+ 
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+ 
+### VS Code ###
+.vscode/
+ 
+### Environment / Secrets ###
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+ 
+### macOS ###
+.DS_Store
+ 
+### Windows ###
+Thumbs.db
+Desktop.ini
+scripts/
