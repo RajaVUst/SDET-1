@@ -31,7 +31,7 @@ public class MainTest {
 
         CreateAUser createAUser = new CreateAUser();
 
-        User user = createAUser.createUser();
+        User user = createAUser.createUserBody();
 
         CreateUserClient createUserClient = new CreateUserClient();
 
@@ -48,7 +48,7 @@ public class MainTest {
 
         CreateAUser createAUser = new CreateAUser();
 
-        User user = createAUser.createUser();
+        User user = createAUser.createUserBody();
 
         CreateUserClient createUserClient = new CreateUserClient();
 
@@ -68,7 +68,7 @@ public class MainTest {
 
         CreateAUser createAUser = new CreateAUser();
 
-        User user = createAUser.createUser();
+        User user = createAUser.createUserBody();
 
         CreateUserClient createUserClient = new CreateUserClient();
 

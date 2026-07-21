@@ -1,6 +1,8 @@
 package ust.sdet.clients;
 
+import io.qameta.allure.Param;
 import io.qameta.allure.Step;
+import io.qameta.allure.model.Parameter;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import ust.sdet.Builders.User;
@@ -26,7 +28,7 @@ public class RetrieveBooksClient {
 
 
     @Step("Retrieving the books List")
-    public BookResponse RetrieveBooks(String token){
+    public BookResponse RetrieveBooks(@Param(mode = Parameter.Mode.MASKED)String token){
         log.info("Retrieving the books List");
         return given()
                 .spec(headspec.setAuthHeaders(token))

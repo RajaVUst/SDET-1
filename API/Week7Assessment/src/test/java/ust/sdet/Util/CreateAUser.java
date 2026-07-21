@@ -8,7 +8,7 @@ import ust.sdet.Config.Secrets;
 public class CreateAUser {
     Secrets secrets = new Secrets();
     @Step("Creating a User Request Body")
-    public User createUser(){
+    public User createUserBody(){
         return UserSeeder.user(secrets.getUsername(),secrets.getPassword()).build();
     }
 }

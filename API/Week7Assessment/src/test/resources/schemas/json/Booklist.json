@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Books Collection",
+  "title": "Books List",
   "type": "object",
   "required": [
     "books"
@@ -23,10 +23,7 @@
         ],
         "properties": {
           "isbn": {
-            "type": "string",
-            "minLength": 10,
-            "maxLength": 17,
-            "description": "ISBN number of the book"
+            "type": "string"
           },
           "title": {
             "type": "string",
