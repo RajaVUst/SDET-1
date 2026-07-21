@@ -1,0 +1,5 @@
+[2026-07-21T08:45:51.256Z] INFO Home Page Opened Successfully!
+[2026-07-21T08:45:51.380Z] INFO Product have been selected
+[2026-07-21T08:45:51.438Z] INFO Verified the product details
+[2026-07-21T08:45:51.544Z] INFO Product added to cart
+[2026-07-21T08:45:51.898Z] INFO Cart opened

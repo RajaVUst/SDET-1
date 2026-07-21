@@ -1,0 +1,15 @@
+[2026-07-21T08:06:41.736Z] INFO Home Page Opened Successfully!
+[2026-07-21T08:06:41.794Z] INFO Product have been selected
+[2026-07-21T08:06:41.850Z] INFO Verified the product details
+[2026-07-21T08:06:41.898Z] INFO Product added to cart
+[2026-07-21T08:06:42.153Z] INFO Cart opened
+[2026-07-21T08:06:42.204Z] INFO Verified the product and proceed to checkout
+[2026-07-21T08:06:42.253Z] INFO Verify CheckoutPage
+[2026-07-21T08:06:42.381Z] INFO Filled Details
+[2026-07-21T08:06:42.442Z] INFO Continued to Pay
+[2026-07-21T08:06:42.485Z] INFO Verified Payment Page
+[2026-07-21T08:06:42.583Z] INFO Payment Details uploaded
+[2026-07-21T08:06:42.624Z] INFO Placed Order
+[2026-07-21T08:06:44.487Z] INFO Verifed No Error Messages
+[2026-07-21T08:06:44.495Z] INFO Verifed the order
+[2026-07-21T08:06:44.503Z] INFO Order ID Generated
