@@ -64,3 +64,52 @@ jobs:
         with:
           name: test-results
           path: Test_UI_Playwright/test-results
+  
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '22'
+          cache: maven
+
+      - name: Create .env
+        working-directory: api_restassured
+        run: |
+          echo "BASE_URL=${{ vars.BASE_API_URL }}" > .env
+
+      - name: Create secrets.local.properties
+        working-directory: api_restassured
+        run: |
+          echo "PASSWORD=${{ secrets.CIPI_PASSWORD }}" > secrets.local.properties
+
+      - name: Run Maven Tests
+        working-directory: api_restassured
+        run: mvn clean test
+
+      - name: Generate Allure Report
+        if: always()
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: api_restassured/target/allure-results
+          allure_report: allure-report
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: api_restassured/target/allure-results
+
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report        

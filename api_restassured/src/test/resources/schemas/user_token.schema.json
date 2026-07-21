@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type": "object",
+  "required": [
+    "token",
+    "expires",
+    "status",
+    "result"
+  ],
+
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "expires": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+
+}
