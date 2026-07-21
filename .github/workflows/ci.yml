@@ -119,10 +119,10 @@ jobs:
           allure_results: apitesting/target/allure-results
           allure_report: allure-report
 
-      - name: Upload Allure Results
+      - name: Upload Allure HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: api-allure-results
-          path: apitesting/target/allure-results/
+          name: api-allure-report
+          path: allure-report/
           retention-days: 14
