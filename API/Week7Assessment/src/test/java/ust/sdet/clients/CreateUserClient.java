@@ -9,6 +9,7 @@ import ust.sdet.Builders.User;
 import ust.sdet.Builders.UserSeeder;
 import ust.sdet.Config.EnvironmentReader;
 import ust.sdet.Config.Secrets;
+import ust.sdet.Response.CreateUserResponse;
 import ust.sdet.SpecBuilder.AssertionSpec;
 import ust.sdet.SpecBuilder.HeadersSpec;
 import ust.sdet.endpoints.Endpoints;
@@ -27,9 +28,9 @@ public class CreateUserClient {
     Secrets secrets = new Secrets();
 
     @Step("Creating the User Request")
-    public Response CreateUser(User user){
+    public CreateUserResponse CreateUser(User user){
 
-        log.info("Starting the create user process...");
+        log.info("Starting the create user process");
 
         return given()
                 .spec(headspec.setHeaders())
@@ -39,7 +40,8 @@ public class CreateUserClient {
                 .then()
                 .spec(assertionSpec.successCreationStatus())
                 .body("userID",notNullValue())
-                .extract().response()
+                .extract()
+                .as(CreateUserResponse.class)
                 ;
     }
 

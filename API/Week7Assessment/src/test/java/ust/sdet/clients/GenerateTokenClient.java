@@ -1,5 +1,6 @@
 package ust.sdet.clients;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import ust.sdet.Builders.User;
@@ -24,6 +25,7 @@ public class GenerateTokenClient {
 
     AssertionSpec assertionSpec = new AssertionSpec();
 
+    @Step("Generating a Token for authentication using user credentials")
     public TokenResponse GenerateToken(User user){
         log.info("Generating the token");
         return given()

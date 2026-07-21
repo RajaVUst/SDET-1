@@ -78,7 +78,7 @@ fun Test.useProjectTestClasses() {
 
 
 val BookStorePOM by tasks.registering(Test::class) {
-    description = "Check the flightbooking flow test"
+    description = "Check the BookStore flow test"
     group = "verification"
     useProjectTestClasses()
     useJUnitPlatform()
@@ -90,6 +90,14 @@ val BookStorePOM by tasks.registering(Test::class) {
         showExceptions = true
         showCauses = true
         showStackTraces = true
+    }
+    doLast {
+        copy {
+
+            from(file("src/test/resources/categories.json"))
+
+            into(layout.buildDirectory.dir("allure-results"))
+        }
     }
 }
 

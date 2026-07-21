@@ -8,6 +8,7 @@ import org.junit.platform.commons.logging.LoggerFactory;
 import ust.sdet.Builders.User;
 import ust.sdet.Builders.UserSeeder;
 import ust.sdet.Response.BookResponse;
+import ust.sdet.Response.CreateUserResponse;
 import ust.sdet.Response.TokenResponse;
 import ust.sdet.Util.CreateAUser;
 import ust.sdet.clients.CreateUserClient;
@@ -35,7 +36,7 @@ public class MainTest {
 
         CreateUserClient createUserClient = new CreateUserClient();
 
-        createUserClient.CreateUser(user);
+        CreateUserResponse createUserResponse = createUserClient.CreateUser(user);
 
 
     }
@@ -52,7 +53,7 @@ public class MainTest {
 
         CreateUserClient createUserClient = new CreateUserClient();
 
-        Response response = createUserClient.CreateUser(user);
+        CreateUserResponse response = createUserClient.CreateUser(user);
 
         GenerateTokenClient generateTokenClient = new GenerateTokenClient();
 
@@ -72,7 +73,7 @@ public class MainTest {
 
         CreateUserClient createUserClient = new CreateUserClient();
 
-        Response response = createUserClient.CreateUser(user);
+        CreateUserResponse response = createUserClient.CreateUser(user);
 
         GenerateTokenClient generateTokenClient = new GenerateTokenClient();
 
@@ -82,7 +83,6 @@ public class MainTest {
 
         BookResponse bookResponse= retrieveBooksClient.RetrieveBooks(tokenResponse.token());
 
-        System.out.println(response.asPrettyString());
     }
 
 

@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Ignored Tests",
+    "matchedStatuses": ["skipped"]
+  },
+  {
+    "name": "Infrastructure Problems",
+    "matchedStatuses": ["broken", "failed"],
+    "messageRegex": ".*TimeoutException.*"
+  },
+  {
+    "name": "Outdated Locators",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*NoSuchElementException.*"
+  },
+  {
+    "name": "Product Defects",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Test Defects",
+    "matchedStatuses": ["broken"]
+  },
+  {
+    "name": "Passed",
+    "matchedStatuses": ["passed"]
+  }
+]

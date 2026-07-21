@@ -2,8 +2,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 
+dotenv.config();
+
 export  function  getCardNumber(): string {
-    const envKey = 'ARAVIND_CARD_NUMBER';
+    const envKey = `ARAVIND_CARD_NUMBER`;
 
         try {
             console.log(process.cwd())
