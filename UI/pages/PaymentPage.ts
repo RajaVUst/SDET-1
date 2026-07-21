@@ -7,6 +7,8 @@ import {locators} from '../Locators/locators'
 
 import carddetails from '../test-data/card-details.json'
 
+import {getCardNumber} from '../Config/Secrets'
+
 export class PaymentPage{
 
     page : Page
@@ -45,7 +47,7 @@ export class PaymentPage{
 
 
         await cardnumber.click();
-        await cardnumber.fill(carddetails[user].number);
+        await cardnumber.fill(getCardNumber());
 
 
         let cardexpiry = await this.locatorclass.cardExpiry(this.page)
